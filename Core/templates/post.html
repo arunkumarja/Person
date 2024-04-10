@@ -1,0 +1,27 @@
+<!-- post.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Data</title>
+</head>
+<body>
+    <h1>Post Data</h1>
+    
+    <h2>Person                                                                                                                                                                                                                                                                                                                                                                                                                          Details</h2>
+    <p>Name: {{ person.name }}</p>
+    <p>Age: {{ person.age }}</p>
+
+    <h2>Interests</h2>
+    <ul>
+        {% for interest in person.interest.all %}
+            <li>{{ interest.title }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Person Address</h2>
+    <p>City: {{ address.city.title }}</p>
+    <p>Street Address: {{ address.Street_address }}</p>
+</body>
+</html>

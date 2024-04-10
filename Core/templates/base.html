@@ -1,0 +1,53 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        height: 50px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    
+
+</style>
+<body>
+    <h2>Students</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Hobbies</th>
+        <th>City</th>
+        <th>Street Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for person in persons %}
+        <tr>
+          <td>{{ person.name }}</td>
+          <td>{{ person.age }}</td>
+          <td>{{person.hobbies}}</td> 
+          <td>{{person.s_addresses.city}}</td>
+          <td>{{person.s_addresses.Street_address}}</td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+ </table> 
+ 
+
+</body>
+</html>

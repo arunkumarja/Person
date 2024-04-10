@@ -1,0 +1,71 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        height: 50px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    
+
+</style>
+<body>
+    <h2>Students</h2>
+{%if persons %}
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Hobbies</th>
+        <th>City</th>
+        <th>Street Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pe in persons %}
+        <tr>
+          <td>{{ pe.person.name }}</td>
+          <td>{{ pe.person.age }}</td>
+            <td>
+              {% for hobby in pe.hobbys %}
+                {{ hobby.title }}
+              {% endfor %}
+            </td>
+                <td>
+                   {% for address in pe.s_address %}
+                     {{ address.city }}
+                   {% endfor %}
+               </td>
+                <td>
+                 {% for address in pe.s_address %}
+                    {{ address.Street_address }}
+                 {% endfor %}
+                </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+ </table> 
+ 
+
+
+{%else%} 
+    <tr>
+        <td>{{message}}</td>
+    </tr>
+{%endif %} 
+</body>
+</html>
